@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>REKANAN - Rekomendasi Resep Makanan</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  <script src="https://kit.fontawesome.com/2a01a4ff3b.js" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+</head>
+<body class="d-flex flex-column min-vh-100 m-0 p-0">
+  <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg">
+      <div class="container">
+        <!-- Logo -->
+        <a class="navbar-brand text-white" href="/">
+          <img src="{{ url_for('static', filename='img/rekanan.png') }}" alt="logo" class="logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link text-white" href="#informasi">INFORMASI</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="#aplikasi">REKOMENDASI</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="#anggotaKelompok">ANGGOTA KELOMPOK</a>
+          </ul>
+        </div>
+      </div>
+      
+    </nav>
+    
+    <!-- Body -->
+   
+      <div id="hero-carousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#hero-carousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#hero-carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#hero-carousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+    
+        <div class="carousel-inner">
+          <div class="carousel-item active c-item">
+            <img src={{ url_for('static', filename='/img/veggie.jpg') }} class="d-block w-100 c-img" alt="Slide 1">
+            <div class="carousel-caption top-0 mt-4">
+              <h1 class="display-1 fw-bolder text-capitalize">REKANAN</h1>
+              <p class="mt-5 fs-3 text-uppercase">Merekomendasikan berbagai Resep Masakan</p>
+              
+              
+            </div>
+          </div>
+          <div class="carousel-item c-item">
+            <img src={{ url_for('static', filename='/img/cook.jpg') }} class="d-block w-100 c-img" alt="Slide 2">
+            <div class="carousel-caption top-0 mt-4">
+              <h1 class="display-1 fw-bolder text-capitalize">REKANAN</h1>
+              <p class="text-uppercase fs-3 mt-5">Upload bahan baku makanan</p>
+            
+              
+            </div>
+          </div>
+          <div class="carousel-item c-item">
+            <img src={{ url_for('static', filename='/img/food.jpg') }} class="d-block w-100 c-img" alt="Slide 3">
+            <div class="carousel-caption top-0 mt-4">
+              <h1 class="display-1 fw-bolder text-capitalize">REKANAN</h1>
+              <p class="text-uppercase fs-3 mt-5">Berbagai Macam Resep Masakan Akan Ditampilkan Melalui Deteksi Gambar</p>
+              
+              
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#hero-carousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#hero-carousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+      &emsp;
+    &emsp;
+    &emsp;
+    <!-- Introduction -->
+    <div id="informasi" class="introduction text-center my-5">
+      <h2>REKANAN</h2>
+      <h4>Rekomedasi Resep Makanan</h4><br>
+      <p>Aplikasi ini dibuat untuk membantu merekomendasikan resep suatu masakan dari klasifikasi bahan baku makanan.</p>
+      <p>User dapat mengupload gambar sayuran dan kemudian sistem akan otomatis merekomendasikan beberapa resep makanan dari gambar yang terdeteksi tersebut.</p>
+    </div>
+    &emsp;
+    &emsp;
+    &emsp;
+
+    <!-- Aplikasi -->
+    <div id="aplikasi" class="container">
+      <div class="upload d-flex gap-5 my-5">
+        <img class="intro-img" src="{{ url_for('static', filename='img/upload.png') }}" alt="makanan">
+        <div>
+          <h2>Rekomendasi Resep</h2>
+          <button>
+            <a class="nav-link text-decoration-none" href="/upload">Upload Gambar</a>
+          </button>
+        </div>
+      </div>
+
+      &nbsp;
+      &nbsp;
+      &nbsp;
+      &nbsp;
+      &nbsp;
+      &nbsp;
+      &nbsp;
+      &nbsp;
+      &nbsp;
+      
+
+      <!-- Nama Kelompok -->
+      <!-- Footer -->
+	<footer class="container-fluid text-center">
+		<div id="anggotaKelompok" class="container-fluid text-center">
+      <br>
+      <h4>ANGGOTA KELOMPOK</h4>
+      
+      <br>
+      <div class="row slideanim">
+        <div class="col-sm-4">
+          <span class="glyphicon glyphicon-user logo-small"></span>
+          <h5>Evita Dwi Octaviani Putri</h5>
+          <h6>Politeknik Elektronika Negri Surabaya</h6>
+        </div>
+        <div class="col-sm-4">
+          <span class="glyphicon glyphicon-user logo-small"></span>
+          <h5>Mochammad Raditya Coustica Rizki</h5>
+          <h6>Politeknik Elektronika Negri Surabaya</h6>
+        </div>
+        <div class="col-sm-4">
+          <span class="glyphicon glyphicon-user logo-small"></span>
+          <h5>Rafi Achmad Ramolo</h5>
+          <h6>Politeknik Elektronika Negri Surabaya</h6>
+        </div>
+      </div>
+        <br>
+        <div class="row slideanim">
+        <div class="col-sm-6">
+          <span class="glyphicon glyphicon-user logo-small"></span>
+          <h5>Muhammad Ardantyo Binangkit</h5>
+          <h6>STIKI Malang</h6>
+        </div>
+        <div class="col-sm-6">
+          <span class="glyphicon glyphicon-user logo-small"></span>
+          <h5>Sultan Arrasyid</h5>
+          <h6>Universitas Sari Mulia Banjarmasin</h6>
+        </div>
+        </div>
+    </div>
+		<p> <br> <a href="https://orbitfutureacademy.id/">orbitfutureacademy.id</a></p>
+	</footer>
+    
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+</body>
+</html>
